@@ -1,0 +1,1442 @@
+{
+	"info": {
+		"_postman_id": "179087fd-8e43-4747-a79f-d42a5ab6f173",
+		"name": "NetBanking_BankAccount",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21494086"
+	},
+	"item": [
+		{
+			"name": "findBankAccountById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// use the `pm.*` API to write your test\r",
+							"// the `pm.test()` method accepts  parameters\r",
+							"// the first parameter is the name of your test (be descriptive)\r",
+							"// the second parameter is a function whereby if any assertions within your function fail, then the test will fail\r",
+							"\r",
+							"pm.test(\"Verify the status code\", function () {\r",
+							"    // make an assertion\r",
+							"    // if your assertion throws an error, this test will fail\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123$",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user1@netbanking.io",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://netbanking.apisec.ai:8080/api/v1/bank-account/:id",
+					"protocol": "http",
+					"host": [
+						"netbanking",
+						"apisec",
+						"ai"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "minim sit dolor voluptate anim",
+							"description": "(Required) id"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "//netbanking.apisec.ai:8080/api/v1/bank-account/:id",
+							"path": [
+								"",
+								"netbanking.apisec.ai:8080",
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify the status code\", function () {\r",
+							"    // make an assertion\r",
+							"    // if your assertion throws an error, this test will fail\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountBalance\": 8415516,\n  \"accountNumber\": -58436396,\n  \"createdBy\": \"sunt\",\n  \"createdDate\": \"1954-10-18T05:55:25.024Z\",\n  \"id\": \"Lorem veniam non pariatur\",\n  \"inactive\": true,\n  \"modifiedBy\": \"sit mollit\",\n  \"modifiedDate\": \"1998-06-23T17:54:26.006Z\",\n  \"user\": {\n    \"createdBy\": \"do cillum Lorem consectetur eiusmod\",\n    \"createdDate\": \"1952-01-31T05:25:26.954Z\",\n    \"id\": \"nostrud voluptate\",\n    \"inactive\": true,\n    \"modifiedBy\": \"anim laborum cillum quis ea\",\n    \"modifiedDate\": \"1970-01-13T16:48:45.147Z\",\n    \"name\": \"consectetur et\",\n    \"version\": 13937702\n  },\n  \"version\": 3691954\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://netbanking.apisec.ai:8080/api/v1/bank-account",
+					"protocol": "http",
+					"host": [
+						"netbanking",
+						"apisec",
+						"ai"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bank-account"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "//netbanking.apisec.ai:8080/api/v1/bank-account",
+							"path": [
+								"",
+								"netbanking.apisec.ai:8080",
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "deposit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify the status code\", function () {\r",
+							"    // make an assertion\r",
+							"    // if your assertion throws an error, this test will fail\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountBalance\": 8415516,\n  \"accountNumber\": -58436396,\n  \"createdBy\": \"sunt\",\n  \"createdDate\": \"1954-10-18T05:55:25.024Z\",\n  \"id\": \"Lorem veniam non pariatur\",\n  \"inactive\": true,\n  \"modifiedBy\": \"sit mollit\",\n  \"modifiedDate\": \"1998-06-23T17:54:26.006Z\",\n  \"user\": {\n    \"createdBy\": \"do cillum Lorem consectetur eiusmod\",\n    \"createdDate\": \"1952-01-31T05:25:26.954Z\",\n    \"id\": \"nostrud voluptate\",\n    \"inactive\": true,\n    \"modifiedBy\": \"anim laborum cillum quis ea\",\n    \"modifiedDate\": \"1970-01-13T16:48:45.147Z\",\n    \"name\": \"consectetur et\",\n    \"version\": 13937702\n  },\n  \"version\": 3691954\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://netbanking.apisec.ai:8080/api/v1/bank-account/deposit-amount",
+					"protocol": "http",
+					"host": [
+						"netbanking",
+						"apisec",
+						"ai"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"deposit-amount"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "//netbanking.apisec.ai:8080/api/v1/bank-account/deposit-amount",
+							"path": [
+								"",
+								"netbanking.apisec.ai:8080",
+								"api",
+								"v1",
+								"bank-account",
+								"deposit-amount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/deposit-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"deposit-amount"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/deposit-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"deposit-amount"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/deposit-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"deposit-amount"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/deposit-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"deposit-amount"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "withdraw",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify the status code\", function () {\r",
+							"    // make an assertion\r",
+							"    // if your assertion throws an error, this test will fail\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountBalance\": 8415516,\n  \"accountNumber\": -58436396,\n  \"createdBy\": \"sunt\",\n  \"createdDate\": \"1954-10-18T05:55:25.024Z\",\n  \"id\": \"Lorem veniam non pariatur\",\n  \"inactive\": true,\n  \"modifiedBy\": \"sit mollit\",\n  \"modifiedDate\": \"1998-06-23T17:54:26.006Z\",\n  \"user\": {\n    \"createdBy\": \"do cillum Lorem consectetur eiusmod\",\n    \"createdDate\": \"1952-01-31T05:25:26.954Z\",\n    \"id\": \"nostrud voluptate\",\n    \"inactive\": true,\n    \"modifiedBy\": \"anim laborum cillum quis ea\",\n    \"modifiedDate\": \"1970-01-13T16:48:45.147Z\",\n    \"name\": \"consectetur et\",\n    \"version\": 13937702\n  },\n  \"version\": 3691954\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://netbanking.apisec.ai:8080/api/v1/bank-account/withdraw-amount",
+					"protocol": "http",
+					"host": [
+						"netbanking",
+						"apisec",
+						"ai"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						"withdraw-amount"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "//netbanking.apisec.ai:8080/api/v1/bank-account/withdraw-amount",
+							"path": [
+								"",
+								"netbanking.apisec.ai:8080",
+								"api",
+								"v1",
+								"bank-account",
+								"withdraw-amount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/withdraw-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"withdraw-amount"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/withdraw-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"withdraw-amount"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/withdraw-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"withdraw-amount"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/withdraw-amount",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								"withdraw-amount"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "deleteById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify the status code\", function () {\r",
+							"    // make an assertion\r",
+							"    // if your assertion throws an error, this test will fail\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://netbanking.apisec.ai:8080/api/v1/bank-account/:id",
+					"protocol": "http",
+					"host": [
+						"netbanking",
+						"apisec",
+						"ai"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bank-account",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "minim sit dolor voluptate anim",
+							"description": "(Required) id"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "//netbanking.apisec.ai:8080/api/v1/bank-account/:id",
+							"path": [
+								"",
+								"netbanking.apisec.ai:8080",
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No Content",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "minim sit dolor voluptate anim",
+									"description": "(Required) id"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "findAllBankAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify the status code\", function () {\r",
+							"    // make an assertion\r",
+							"    // if your assertion throws an error, this test will fail\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://netbanking.apisec.ai:8080/api/v1/bank-account?pageSize=20",
+					"protocol": "http",
+					"host": [
+						"netbanking",
+						"apisec",
+						"ai"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bank-account"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "20",
+							"description": "pageSize"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "//netbanking.apisec.ai:8080/api/v1/bank-account?pageSize=20",
+							"path": [
+								"",
+								"netbanking.apisec.ai:8080",
+								"api",
+								"v1",
+								"bank-account"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account?pageSize=20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account?pageSize=20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account?pageSize=20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "add",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify the status code\", function () {\r",
+							"    // make an assertion\r",
+							"    // if your assertion throws an error, this test will fail\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountBalance\": 8415516,\n  \"accountNumber\": -58436396,\n  \"createdBy\": \"sunt\",\n  \"createdDate\": \"1954-10-18T05:55:25.024Z\",\n  \"id\": \"Lorem veniam non pariatur\",\n  \"inactive\": true,\n  \"modifiedBy\": \"sit mollit\",\n  \"modifiedDate\": \"1998-06-23T17:54:26.006Z\",\n  \"user\": {\n    \"createdBy\": \"do cillum Lorem consectetur eiusmod\",\n    \"createdDate\": \"1952-01-31T05:25:26.954Z\",\n    \"id\": \"nostrud voluptate\",\n    \"inactive\": true,\n    \"modifiedBy\": \"anim laborum cillum quis ea\",\n    \"modifiedDate\": \"1970-01-13T16:48:45.147Z\",\n    \"name\": \"consectetur et\",\n    \"version\": 13937702\n  },\n  \"version\": 3691954\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://netbanking.apisec.ai:8080/api/v1/bank-account",
+					"protocol": "http",
+					"host": [
+						"netbanking",
+						"apisec",
+						"ai"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bank-account"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "//netbanking.apisec.ai:8080/api/v1/bank-account",
+							"path": [
+								"",
+								"netbanking.apisec.ai:8080",
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bank-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bank-account"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
